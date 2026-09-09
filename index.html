@@ -92,7 +92,7 @@ thead th.sort-desc::after{content:' ↓'}
 <div class="page">
   <div class="module">
     <div class="section-header"><h2>引导加微</h2></div>
-    <div class="module-body"><div class="no-data">⚠️ 找不到文件: 引导加微每日数据-0908.csv</div></div>
+    <div class="module-body"><div class="no-data">⚠️ 昨日后台数据有误，明天开始正常推送</div></div>
   </div>
   <div class="module">
     <div class="section-header"><h2>千川 · 199高中双科</h2></div>
@@ -521,7 +521,7 @@ function initSortableTable(tableId) {
   headers.forEach(th => {
     th.addEventListener('click', function() {
       const col = parseInt(this.dataset.col);
-      const asc = !this.classList.contains('sort-desc');
+      const asc = this.classList.contains('sort-desc');
       headers.forEach(h => h.classList.remove('sort-asc','sort-desc'));
       this.classList.add(asc ? 'sort-asc' : 'sort-desc');
       const tbody = table.querySelector('tbody');
